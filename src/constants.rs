@@ -20,3 +20,4 @@ pub const AttackSubanimationWindup : u32 = 00;
 pub const AttackSubanimationWindupClosing : u32 = 01;
 pub const AttackSubanimationWindupGhostHit : u32 = 02;
 pub const AttackSubanimationActiveDuringHurtbox : u32 = 11;
+pub const LockInSubanimation : u32 = 12;
