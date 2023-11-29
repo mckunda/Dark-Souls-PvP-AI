@@ -11,15 +11,16 @@ use windows::Win32::UI::WindowsAndMessaging::{FindWindowA, SetForegroundWindow};
 use crate::ai::ai_decisions::{InstinctDecision, InstinctDecisionMaking, SubroutineId};
 use crate::ai::ai_decisions::PriorityDecision::EnterDodgeSubroutine;
 use crate::ai::ai_methods::{attack, dodge};
-use crate::ai::character::{Enemy, Enemy_base_add, EnemyId, Player, player_base_add, PlayerId, ReadPlayer, ReadPointerEndAddresses};
+use crate::ai::character::{Enemy, Enemy_base_add, Player, player_base_add, PlayerId, ReadPlayer, ReadPointerEndAddresses};
 use crate::ai::guiPrint;
 use crate::ai::gui::LocationDetection;
 use crate::ai::helper_util::{distance, loadvJoy, readCamera};
 use crate::ai::memory::AppendDistance;
 use crate::ai::memory_edits::{GetModuleBase, GetProcessIdFromName};
 use crate::ai::mind_routines::{attack_mind_input, AttackChoice, defense_mind_input, DefenseChoice, ReadyThreads, WaitForThread, WakeThread};
-use crate::ai::sub_routines::{AttackId, subroutine_states, inActiveAttackSubroutine, inActiveDodgeSubroutine, SafelyExitSubroutines};
+use crate::ai::sub_routines::{AttackId, inActiveAttackSubroutine, inActiveDodgeSubroutine, SafelyExitSubroutines, subroutine_states};
 use crate::ai::vjoyhelper::{iReport, ResetVJoyController};
+use crate::constants::EnemyId;
 
 lazy_static!(
     pub static ref processHandle: Mutex<HANDLE> = Mutex::new(HANDLE(0));

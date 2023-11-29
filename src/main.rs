@@ -1,6 +1,7 @@
 pub mod ai;
 mod fann;
 mod fann_sys;
+mod constants;
 
 extern crate lazy_static;
 

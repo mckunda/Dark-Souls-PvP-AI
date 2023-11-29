@@ -5,12 +5,13 @@ use vjoy_sys::{BOOL, DWORD, LONG, VjdStat, VjdStat_VJD_STAT_FREE, VjdStat_VJD_ST
 use windows::Win32::Foundation::HANDLE;
 use windows::Win32::System::Diagnostics::Debug::ReadProcessMemory;
 use crate::ai::animation_mappings::{AnimationTypes, isAttackAnimation, isDodgeAnimation};
-use crate::ai::character::{Character, Enemy, EnemyId};
+use crate::ai::character::{Character, Enemy};
 use crate::ai::guiPrint;
 use crate::ai::memory::{last_animation_types_enemy, last_animation_types_enemy_LENGTH};
 use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
+use crate::constants::EnemyId;
 
 pub const PI: f64 = 3.14159265;
 pub const XRIGHT: LONG = 32768;

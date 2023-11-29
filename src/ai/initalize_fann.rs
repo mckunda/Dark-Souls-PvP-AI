@@ -14,7 +14,7 @@ use libc::{c_char, c_uint, FILE};
 use windows::Win32::System::Diagnostics::Debug::ReadProcessMemory;
 use rand::prelude::*;
 use crate::ai::animation_mappings::isAttackAnimation;
-use crate::ai::character::{Character, Enemy, EnemyId, Player, player_base_add, PlayerId, ReadPlayer};
+use crate::ai::character::{Character, Enemy, Player, player_base_add, PlayerId, ReadPlayer};
 use crate::ai::ffi::clock;
 use crate::ai::helper_util::{angleDeltaFromFront, distance, rotationDifferenceFromSelf, StaminaEstimationEnemy};
 use crate::ai::memory::{AIHPMemory, AIHPMemoryLENGTH, AppendDistance, DistanceMemory, DistanceMemoryLENGTH, last_animation_types_enemy, last_animation_types_enemy_LENGTH};
@@ -22,6 +22,7 @@ use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::{DisableAi, NeuralNetFolderLocation, TrainAttackNet, TrainBackstabNet};
 use crate::ai::source::{MainLogicLoop, processHandle};
 use crate::ai::weapon_data::PoiseDamageForAttack;
+use crate::constants::EnemyId;
 
 pub const TwoSecStoreLength: usize = 40;
 

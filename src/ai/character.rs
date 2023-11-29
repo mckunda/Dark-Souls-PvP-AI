@@ -10,6 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
+use crate::constants::EnemyId;
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -169,7 +170,6 @@ lazy_static!(
         }
     );
 );
-pub const EnemyId: i32 = 0;
 pub const PlayerId: i32 = 1;
 
 
