@@ -11,11 +11,9 @@ use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleFromCoordinates, angleToJoystick, BackstabDetection, circle, distance, dleft, l1, l2, longTuple, MIDDLE, r1, r3, square, triangle, XLEFT, XRIGHT, YBOTTOM};
 use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
-use crate::constants::{AttackSubanimationWindupGhostHit, CLOCKS_PER_SEC, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
+use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
 
-use crate::constants::SubanimationRecover;
-
-pub const TotalTimeInSectoReverseRoll: f32 = (TimeForR3ToTrigger + TimeForCameraToRotateAfterLockon + TimeDeltaForGameRegisterAction + 50) as f32 / (CLOCKS_PER_SEC as f32);//convert above CLOCKS_PER_SEC ticks to seconds
+use crate::constants::SubanimationRecover;//convert above CLOCKS_PER_SEC ticks to seconds
 
 
 /* ------------- DODGE Actions ------------- */

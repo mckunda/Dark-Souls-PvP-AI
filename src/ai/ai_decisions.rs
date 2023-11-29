@@ -1,5 +1,5 @@
 use crate::ai::{back_to_enum, guiPrint};
-use crate::ai::ai_methods::TotalTimeInSectoReverseRoll;
+use crate::constants::TotalTimeInSectoReverseRoll;
 use crate::ai::animation_mappings::{AnimationTypes, isAttackAnimation};
 use crate::ai::character::{Enemy, Player};
 use crate::ai::gui::{LocationDetection, LocationJoystick};
