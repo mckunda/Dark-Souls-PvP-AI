@@ -7,3 +7,4 @@ pub const Player_loc_y_offsets_length: usize = 5;
 pub const Enemy_rotation_offsets_length: usize = 5;
 pub const Player_rotation_offsets_length: usize = 4;
 pub const Enemy_animationType_offsets_length: usize = 5;
+pub const Player_animationType_offsets_length: usize = 5;
