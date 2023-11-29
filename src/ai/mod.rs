@@ -6,21 +6,21 @@ pub mod character;
 pub mod memory_edits;
 pub mod memory;
 pub mod settings;
-mod gui;
-mod vjoyhelper;
+pub mod gui;
+pub mod vjoyhelper;
 mod ai_decisions;
 mod ai_methods;
-mod initalize_fann;
+pub mod initalize_fann;
 mod mind_routines;
-mod handler;
-mod source;
+pub mod handler;
+pub mod source;
 mod test_space;
 
 pub use std::println as guiPrint;
 
 extern crate libc;
 
-mod ffi {
+pub mod ffi {
     extern {
         pub fn clock() -> i64;
     }
