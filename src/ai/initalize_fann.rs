@@ -22,7 +22,7 @@ use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::{DisableAi, NeuralNetFolderLocation, TrainAttackNet, TrainBackstabNet};
 use crate::ai::source::{MainLogicLoop, processHandle};
 use crate::ai::weapon_data::PoiseDamageForAttack;
-use crate::constants::{EnemyId, Player_AnimationId3_offsets_length, PlayerId, TwoSecStoreLength};
+use crate::constants::{EnemyId, Player_AnimationId3_offsets_length, Player_Timer3_offsets_length, PlayerId, TwoSecStoreLength};
 
 lazy_static!(
     static ref TwoSecStore: Mutex<[Option<Character>;TwoSecStoreLength]> = Mutex::new([None;TwoSecStoreLength]);
@@ -43,7 +43,6 @@ lazy_static!(
     static ref AnimationId3: Mutex<i32> = Mutex::new(0);
 );
 static Player_Timer3_offsets: &'static [u64;Player_Timer3_offsets_length]  = &[ 0x3C, 0x28, 0x18, 0x7DC, 0x98 ];
-pub const Player_Timer3_offsets_length: usize = 5;
 lazy_static!(
     static ref Timer3_Addr: Mutex<u64> = Mutex::new(0);
 );
