@@ -14,3 +14,4 @@ pub const Player_stamina_offsets_length: usize = 5;
 pub const Enemy_r_weapon_offsets_length: usize = 5;
 pub const Player_r_weapon_offsets_length: usize = 5;
 pub const Enemy_l_weapon_offsets_length: usize = 5;
+pub const Player_l_weapon_offsets_length: usize = 5;
