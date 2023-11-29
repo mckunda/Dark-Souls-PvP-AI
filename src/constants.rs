@@ -19,3 +19,4 @@ pub const Player_l_weapon_offsets_length: usize = 5;
 pub const AttackSubanimationWindup : u32 = 00;
 pub const AttackSubanimationWindupClosing : u32 = 01;
 pub const AttackSubanimationWindupGhostHit : u32 = 02;
+pub const AttackSubanimationActiveDuringHurtbox : u32 = 11;
