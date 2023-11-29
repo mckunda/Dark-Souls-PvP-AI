@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{AttackSubanimationWindup, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId};
+use crate::constants::{AttackSubanimationWindup, AttackSubanimationWindupClosing, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -207,7 +207,6 @@ static Player_r_weapon_offsets: &'static [u64] = &[ 0x3C, 0x30, 0xC, 0x654, 0x1F
 //L weapon id
 static Enemy_l_weapon_offsets: &'static [u64] = &[ 0x4, 0x4, 0x34C, 0x654, 0x1B8 ];
 static Player_l_weapon_offsets: &'static [u64] = &[ 0x3C, 0x30, 0xC, 0x654, 0x1B4 ];
-pub const AttackSubanimationWindupClosing : u32 = 01;
 pub const AttackSubanimationWindupGhostHit : u32 = 02;
 pub const AttackSubanimationActiveDuringHurtbox : u32 = 11;
 pub const LockInSubanimation : u32 = 12;
