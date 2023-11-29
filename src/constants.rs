@@ -18,3 +18,4 @@ pub const Player_l_weapon_offsets_length: usize = 5;
 //the current subanimation being executed
 pub const AttackSubanimationWindup : u32 = 00;
 pub const AttackSubanimationWindupClosing : u32 = 01;
+pub const AttackSubanimationWindupGhostHit : u32 = 02;
