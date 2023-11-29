@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_rotation_offsets_length, EnemyId, Player_loc_x_offsets_length, Player_loc_y_offsets_length, PlayerId};
+use crate::constants::{Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_rotation_offsets_length, EnemyId, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_rotation_offsets_length, PlayerId};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -193,7 +193,6 @@ static Player_loc_y_offsets: &'static [u64] = &[ 0x3C, 0x330, 0x4, 0x20C, 0x3C8 
 //offsets and length for rotation.
 static Enemy_rotation_offsets: &'static [u64] = &[ 0x4, 0x4, 0x28, 0x54, 0x34 ];
 static Player_rotation_offsets: &'static [u64] = &[ 0x3C, 0x28, 0x1C, 0x4 ];
-pub const Player_rotation_offsets_length: usize = 4;
 //offsets and length for animation type id
 static Enemy_animationType_offsets: &'static [u64] = &[ 0x4, 0x4, 0x28, 0x54, 0x1EC ];
 static Player_animationType_offsets: &'static [u64] = &[ 0x288, 0xC, 0xC, 0x10, 0x41C ];
