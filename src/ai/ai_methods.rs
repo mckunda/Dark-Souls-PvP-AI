@@ -11,11 +11,10 @@ use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleFromCoordinates, angleToJoystick, BackstabDetection, circle, distance, dleft, l1, l2, longTuple, MIDDLE, r1, r3, square, triangle, XLEFT, XRIGHT, YBOTTOM};
 use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
-use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral};
+use crate::constants::{AttackSubanimationWindupGhostHit, CLOCKS_PER_SEC, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral};
 
 use crate::constants::SubanimationRecover;
 
-pub const CLOCKS_PER_SEC: i32 = 1000000;
 pub const TimeForR3ToTrigger: i64 = 50;
 pub const TimeForCameraToRotateAfterLockon: i64 = 180;//how much time we give to allow the camera to rotate.
 pub const TimeDeltaForGameRegisterAction: i64 = 170;
