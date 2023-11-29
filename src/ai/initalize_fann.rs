@@ -22,9 +22,7 @@ use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::{DisableAi, NeuralNetFolderLocation, TrainAttackNet, TrainBackstabNet};
 use crate::ai::source::{MainLogicLoop, processHandle};
 use crate::ai::weapon_data::PoiseDamageForAttack;
-use crate::constants::{EnemyId, PlayerId};
-
-pub const TwoSecStoreLength: usize = 40;
+use crate::constants::{EnemyId, PlayerId, TwoSecStoreLength};
 
 lazy_static!(
     static ref TwoSecStore: Mutex<[Option<Character>;TwoSecStoreLength]> = Mutex::new([None;TwoSecStoreLength]);
