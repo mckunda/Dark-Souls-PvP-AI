@@ -64,3 +64,5 @@ pub const TotalTimeInSectoReverseRoll: f32 = (TimeForR3ToTrigger + TimeForCamera
 pub const inputDelayForStopCircle: i64 = 40;
 
 pub const inputDelayForOmnistepWait: i64 = 40;
+
+pub const inputDelayForStopOmnistepJoystickDirection: i64 = 40;
