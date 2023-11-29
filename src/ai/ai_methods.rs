@@ -13,7 +13,7 @@ use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
 use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation};
 
-use super::character::SubanimationRecover;
+use crate::constants::SubanimationRecover;
 
 pub const CLOCKS_PER_SEC: i32 = 1000000;
 pub const TimeForR3ToTrigger: i64 = 50;
