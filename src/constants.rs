@@ -12,3 +12,4 @@ pub const Enemy_hp_offsets_length: usize = 3;
 pub const Player_hp_offsets_length: usize = 5;
 pub const Player_stamina_offsets_length: usize = 5;
 pub const Enemy_r_weapon_offsets_length: usize = 5;
+pub const Player_r_weapon_offsets_length: usize = 5;
