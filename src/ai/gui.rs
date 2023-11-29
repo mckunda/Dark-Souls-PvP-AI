@@ -2,7 +2,7 @@
 // #include <stdarg.h>
 // #include <stdio.h>
 
-use crate::ai::character::PlayerId;
+use crate::constants::PlayerId;
 use crate::constants::EnemyId;
 
 pub const LocationMemoryEnemy: i32 = EnemyId;

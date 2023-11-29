@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::EnemyId;
+use crate::constants::{EnemyId, PlayerId};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -170,7 +170,6 @@ lazy_static!(
         }
     );
 );
-pub const PlayerId: i32 = 1;
 
 
 //TODO prune as many of these as possible. what needs to be kept for only one char?

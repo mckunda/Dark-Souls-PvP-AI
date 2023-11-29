@@ -8,8 +8,9 @@ use std::thread;
 use lazy_static::lazy_static;
 use windows::core::imp::CloseHandle;
 use windows::Win32::System::Diagnostics::Debug::ReadProcessMemory;
-use crate::ai::character::{Player, PlayerId, ReadPlayer};
+use crate::ai::character::{Player, ReadPlayer};
 use crate::ai::source::{processHandle, SetupandLoad};
+use crate::constants::PlayerId;
 lazy_static!(
     static ref listening1: Mutex<bool> = Mutex::new(true);
 );
