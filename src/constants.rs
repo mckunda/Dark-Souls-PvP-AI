@@ -53,3 +53,5 @@ pub const WeaponGhostHitTime_QFS: f32 = 0.22;
 pub const CLOCKS_PER_SEC: i32 = 1000000;
 
 pub const TimeForR3ToTrigger: i64 = 50;
+
+pub const TimeForCameraToRotateAfterLockon: i64 = 180;
