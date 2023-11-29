@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, LockInSubanimation, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
+use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, LockInSubanimation, Player_animationID2_offsets_length, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -221,7 +221,6 @@ static Player_animationID_offsets: &'static [u64] = &[ 0x288, 0xC, 0x618, 0x28, 
 //second animation id
 static Enemy_animationID2_offsets: &'static [u64] = &[ 0x4, 0x4, 0x28, 0x18, 0x3A8 ];
 static Player_animationID2_offsets: &'static [u64] = &[ 0x3C, 0x28, 0x18, 0x8C, 0x1D4 ];
-pub const Player_animationID2_offsets_length: usize = 5;
 //teriary animation id
 static Enemy_animationID3_offsets: &'static [u64] = &[ 0x4, 0x4, 0x65C, 0x268, 0x770 ];
 pub const Enemy_animationID3_offsets_length: usize = 5;
