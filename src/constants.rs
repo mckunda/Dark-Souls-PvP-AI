@@ -10,3 +10,4 @@ pub const Enemy_animationType_offsets_length: usize = 5;
 pub const Player_animationType_offsets_length: usize = 5;
 pub const Enemy_hp_offsets_length: usize = 3;
 pub const Player_hp_offsets_length: usize = 5;
+pub const Player_stamina_offsets_length: usize = 5;
