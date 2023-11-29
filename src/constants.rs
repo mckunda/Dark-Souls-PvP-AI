@@ -43,3 +43,4 @@ pub const Player_twohanding_offsets_length: usize = 5;
 pub const Enemy_stamRecovery_offsets_length: usize = 5;
 pub const Player_Poise_offsets_length: usize = 5;
 pub const Enemy_Poise_offsets_length: usize = 5;
+pub const Player_BleedStatus_offsets_length: usize = 2;
