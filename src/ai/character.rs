@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID3_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, Enemy_velocity_offsets_length, EnemyId, LockInSubanimation, Player_animationID2_offsets_length, Player_animationID3_offsets_length, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_Lock_on_offsets_length, Player_r_weapon_offsets_length, Player_readyState_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
+use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID3_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, Enemy_velocity_offsets_length, EnemyId, LockInSubanimation, Player_animationID2_offsets_length, Player_animationID3_offsets_length, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_Lock_on_offsets_length, Player_r_weapon_offsets_length, Player_readyState_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, Player_twohanding_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -235,7 +235,6 @@ static Enemy_velocity_offsets: &'static [u64] = &[ 0x4, 0x4, 0x658, 0x5C, 0x3BC 
 static Player_Lock_on_offsets: &'static [u64] = &[ 0x3C, 0x170, 0x2C, 0x390, 0x128 ];
 //handed state of player
 static Player_twohanding_offsets: &'static [u64] = &[ 0x28, 0x0, 0x148, 0x4C8, 0x0 ];
-pub const Player_twohanding_offsets_length: usize = 5;
 //stamina recovery rate of enemy
 static Enemy_stamRecovery_offsets: &'static [u64] = &[ 0x4, 0x4, 0x170, 0x34C, 0x408 ];
 pub const Enemy_stamRecovery_offsets_length: usize = 5;

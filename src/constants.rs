@@ -39,3 +39,4 @@ pub const Player_animationID3_offsets_length: usize = 2;
 pub const Player_readyState_offsets_length: usize = 5;
 pub const Enemy_velocity_offsets_length: usize = 5;
 pub const Player_Lock_on_offsets_length: usize = 5;
+pub const Player_twohanding_offsets_length: usize = 5;
