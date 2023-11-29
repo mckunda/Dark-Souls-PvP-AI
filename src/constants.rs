@@ -45,3 +45,7 @@ pub const Player_Poise_offsets_length: usize = 5;
 pub const Enemy_Poise_offsets_length: usize = 5;
 pub const Player_BleedStatus_offsets_length: usize = 2;
 pub const PI: f32 = 3.14159265f32;
+
+//NOTE: this is curently hardcoded until i find a dynamic way
+//How To Find: Increase this value until the attack ends with the AI turned away from the enemy. Decrease till it doesnt.
+pub const WeaponGhostHitTime_QFS: f32 = 0.22;

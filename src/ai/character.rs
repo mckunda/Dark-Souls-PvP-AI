@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID3_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_Poise_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, Enemy_stamRecovery_offsets_length, Enemy_velocity_offsets_length, EnemyId, LockInSubanimation, PI, Player_animationID2_offsets_length, Player_animationID3_offsets_length, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_BleedStatus_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_Lock_on_offsets_length, Player_Poise_offsets_length, Player_r_weapon_offsets_length, Player_readyState_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, Player_twohanding_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
+use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationID2_offsets_length, Enemy_animationID3_offsets_length, Enemy_animationID_offsets_length, Enemy_animationTimer2_offsets_length, Enemy_animationTimer_offsets_length, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_Poise_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, Enemy_stamRecovery_offsets_length, Enemy_velocity_offsets_length, EnemyId, LockInSubanimation, PI, Player_animationID2_offsets_length, Player_animationID3_offsets_length, Player_animationID_offsets_length, Player_animationTimer2_offsets_length, Player_animationTimer_offsets_length, Player_animationType_offsets_length, Player_BleedStatus_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_Lock_on_offsets_length, Player_Poise_offsets_length, Player_r_weapon_offsets_length, Player_readyState_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, Player_twohanding_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover, WeaponGhostHitTime_QFS};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -242,10 +242,6 @@ static Player_Poise_offsets: &'static [u64] = &[ 0x28, 0x18, 0xE0, 0xC, 0x1C0 ];
 static Enemy_Poise_offsets: &'static [u64] = &[ 0x4, 0x4, 0x60, 0x8, 0x1C0 ];
 //bleed status
 static Player_BleedStatus_offsets: &'static [u64] = &[ 0x3C, 0x308 ];
-
-//NOTE: this is curently hardcoded until i find a dynamic way
-//How To Find: Increase this value until the attack ends with the AI turned away from the enemy. Decrease till it doesnt.
-pub const WeaponGhostHitTime_QFS: f32 = 0.22;
 
 lazy_static!(
     static ref waitingForAnimationTimertoCatchUp: Mutex<bool> = Mutex::new(false);
