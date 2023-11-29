@@ -25,3 +25,4 @@ pub const AttackSubanimationActiveHurtboxOver : u32 = 13;
 pub const PoiseBrokenSubanimation : u32 = 14;
 pub const SubanimationRecover : u32 = 20;
 pub const SubanimationNeutral : u32 = 30;
+pub const Enemy_hurtboxActive_offsets_length: usize = 5;

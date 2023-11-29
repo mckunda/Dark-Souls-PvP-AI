@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, LockInSubanimation, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
+use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationActiveHurtboxOver, AttackSubanimationWindup, AttackSubanimationWindupClosing, AttackSubanimationWindupGhostHit, Enemy_animationType_offsets_length, Enemy_hp_offsets_length, Enemy_hurtboxActive_offsets_length, Enemy_l_weapon_offsets_length, Enemy_loc_x_offsets_length, Enemy_loc_y_offsets_length, Enemy_r_weapon_offsets_length, Enemy_rotation_offsets_length, EnemyId, LockInSubanimation, Player_animationType_offsets_length, Player_hp_offsets_length, Player_l_weapon_offsets_length, Player_loc_x_offsets_length, Player_loc_y_offsets_length, Player_r_weapon_offsets_length, Player_rotation_offsets_length, Player_stamina_offsets_length, PlayerId, PoiseBrokenSubanimation, SubanimationNeutral, SubanimationRecover};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -209,7 +209,6 @@ static Enemy_l_weapon_offsets: &'static [u64] = &[ 0x4, 0x4, 0x34C, 0x654, 0x1B8
 static Player_l_weapon_offsets: &'static [u64] = &[ 0x3C, 0x30, 0xC, 0x654, 0x1B4 ];
 //if enemy's weapon's hurtbox is active
 static Enemy_hurtboxActive_offsets: &'static [u64] = &[ 0x4, 0x0, 0xC, 0x3C, 0xF ];
-pub const Enemy_hurtboxActive_offsets_length: usize = 5;
 //time animation has been active
 static Enemy_animationTimer_offsets: &'static [u64] = &[ 0x4, 0x4, 0x28, 0x18, 0x4DC ];
 pub const Enemy_animationTimer_offsets_length: usize = 5;
