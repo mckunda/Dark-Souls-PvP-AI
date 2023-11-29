@@ -55,7 +55,7 @@ pub fn SetupandLoad() -> i32 {
     p.weaponRange = 2.5;
 
     //get access to dark souls memory
-    let processName = "DARKSOULS.exe";
+    let processName = "DarkSoulsRemastered.exe";
     //get the process id from the name
     let processId = unsafe {
         GetProcessIdFromName(processName)
