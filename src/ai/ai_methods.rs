@@ -11,7 +11,7 @@ use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleFromCoordinates, angleToJoystick, BackstabDetection, circle, distance, dleft, l1, l2, longTuple, MIDDLE, r1, r3, square, triangle, XLEFT, XRIGHT, YBOTTOM};
 use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
-use crate::constants::{AttackSubanimationWindupGhostHit, inputDelayForOmnistepWait, inputDelayForStart, inputDelayForStopCircle, inputDelayForStopOmnistepJoystickDirection, inputDelayForStopStrafe, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
+use crate::constants::{AttackSubanimationWindupGhostHit, inputDelayForKick, inputDelayForOmnistepWait, inputDelayForStart, inputDelayForStopCircle, inputDelayForStopOmnistepJoystickDirection, inputDelayForStopStrafe, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
 
 use crate::constants::SubanimationRecover;//convert above CLOCKS_PER_SEC ticks to seconds
 
@@ -385,10 +385,7 @@ pub unsafe fn dodge(iReport: &mut JOYSTICK_POSITION, instinct_decision: &mut Ins
     }
 }
 
-/* ------------- ATTACK Actions ------------- *///if we exit move forward and go into attack, need this to prevent kick
-pub const inputDelayForKick: i64 = 50;
-
-pub unsafe fn ghostHit(iReport: &mut JOYSTICK_POSITION){
+/* ------------- ATTACK Actions ------------- */pub unsafe fn ghostHit(iReport: &mut JOYSTICK_POSITION){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
     let mut e = Enemy.lock();
