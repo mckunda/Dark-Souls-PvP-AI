@@ -77,3 +77,4 @@ pub const inputDelayForKick: i64 = 50;
 pub const inputDelayForStopMove: i64 = 90;
 
 pub const TwoSecStoreLength: usize = 40;
+pub const Player_AnimationId3_offsets_length: usize = 2;
