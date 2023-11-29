@@ -28,3 +28,4 @@ pub const SubanimationNeutral : u32 = 30;
 pub const Enemy_hurtboxActive_offsets_length: usize = 5;
 pub const Enemy_animationTimer_offsets_length: usize = 5;
 pub const Player_animationTimer_offsets_length: usize = 5;
+pub const Enemy_animationTimer2_offsets_length: usize = 5;
