@@ -73,3 +73,5 @@ pub const inputDelayForStart: i64 = 10;
 
 //if we exit move forward and go into attack, need this to prevent kick
 pub const inputDelayForKick: i64 = 50;
+
+pub const inputDelayForStopMove: i64 = 90;
