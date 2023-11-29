@@ -10,7 +10,7 @@ use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation
 use crate::ai::guiPrint;
 use crate::ai::memory::{AppendAIHP, AppendAnimationTypeEnemy, AppendLastAnimationIdEnemy};
 use crate::ai::memory_edits::FindPointerAddr;
-use crate::constants::{Enemy_loc_x_offsets_length, EnemyId, PlayerId};
+use crate::constants::{Enemy_loc_x_offsets_length, EnemyId, Player_loc_x_offsets_length, PlayerId};
 
 #[derive(Clone, Copy)]
 pub struct Character {
@@ -187,7 +187,6 @@ lazy_static!(
 //offsets and length for x location
 static Enemy_loc_x_offsets: &'static [u64] = &[ 0x4, 0x4, 0x2C, 0x260 ];
 static Player_loc_x_offsets: &'static [u64] = &[ 0x3C, 0x330, 0x4, 0x20C, 0x3C0 ];
-pub const Player_loc_x_offsets_length: usize = 5;
 //offsets and length for y location
 static Enemy_loc_y_offsets: &'static [u64] = &[ 0x4, 0x4, 0x28, 0x54, 0x268 ];
 static Player_loc_y_offsets: &'static [u64] = &[ 0x3C, 0x330, 0x4, 0x20C, 0x3C8 ];
