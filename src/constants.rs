@@ -34,3 +34,4 @@ pub const Enemy_animationID_offsets_length: usize = 5;
 pub const Player_animationID_offsets_length: usize = 5;
 pub const Enemy_animationID2_offsets_length: usize = 5;
 pub const Player_animationID2_offsets_length: usize = 5;
+pub const Enemy_animationID3_offsets_length: usize = 5;
