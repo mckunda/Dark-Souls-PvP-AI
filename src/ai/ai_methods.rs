@@ -11,7 +11,7 @@ use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleFromCoordinates, angleToJoystick, BackstabDetection, circle, distance, dleft, l1, l2, longTuple, MIDDLE, r1, r3, square, triangle, XLEFT, XRIGHT, YBOTTOM};
 use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
-use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
+use crate::constants::{AttackSubanimationWindupGhostHit, inputDelayForStopCircle, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral, TimeDeltaForGameRegisterAction, TimeForCameraToRotateAfterLockon, TimeForR3ToTrigger};
 
 use crate::constants::SubanimationRecover;//convert above CLOCKS_PER_SEC ticks to seconds
 
@@ -90,8 +90,6 @@ pub unsafe fn StandardRoll(iReport: &mut JOYSTICK_POSITION) {
         guiPrint!("{},1:offset angle {} angle roll {}", LocationState, rollOffset, angle);
     }
 }
-
-pub const inputDelayForStopCircle: i64 = 40;
 
 pub unsafe fn Backstep(iReport: &mut JOYSTICK_POSITION){
     guiPrint!("{},0:Backstep", LocationState);
