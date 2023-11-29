@@ -55,3 +55,6 @@ pub const CLOCKS_PER_SEC: i32 = 1000000;
 pub const TimeForR3ToTrigger: i64 = 50;
 
 pub const TimeForCameraToRotateAfterLockon: i64 = 180;
+
+//how much time we give to allow the camera to rotate.
+pub const TimeDeltaForGameRegisterAction: i64 = 170;
