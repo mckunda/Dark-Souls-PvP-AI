@@ -68,3 +68,5 @@ pub const inputDelayForOmnistepWait: i64 = 40;
 pub const inputDelayForStopOmnistepJoystickDirection: i64 = 40;
 
 pub const inputDelayForStopStrafe: i64 = 800;
+
+pub const inputDelayForStart: i64 = 10;
