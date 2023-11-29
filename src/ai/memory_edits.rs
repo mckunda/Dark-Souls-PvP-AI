@@ -45,8 +45,8 @@ pub unsafe fn GetProcessIdFromName(ProcName: &str) -> u32 {
 			// let cstr: String = cstr.into_c_string().into_string().unwrap(); // TODO: handle error
 			// let cstr: String = cstr.indi
 			let pn = ProcName.to_lowercase();
-			let mut processname: [u8;20] = [0;20];//just go with 20
-			processname.copy_from_slice(&entry.szExeFile[..20]);
+			let mut processname: [u8;260] = [0;260];//just go with 20
+			processname.copy_from_slice(&entry.szExeFile);
 			let processname = CStr::from_ptr(&processname as *const _ as *const c_char)
 				.to_str().unwrap().to_lowercase(); // TODO: handle error
 			// size_t charsConverted = 0;
@@ -95,8 +95,8 @@ pub unsafe fn GetModuleBase(ProcessID: u32, ModuleName: &str) -> u64 {
 	while Module32Next(hSnap, &mut Mod32).is_ok() {
 		// TODO: looks like shit, rewrite
 		let mn = ModuleName.to_lowercase();
-		let mut processname: [u8;20] = [0;20];//just go with 20
-		processname.copy_from_slice(&Mod32.szModule[..20]);
+		let mut processname: [u8;256] = [0;256];//just go with 20
+		processname.copy_from_slice(&Mod32.szModule);
 		let szModule = CStr::from_ptr(&processname as *const _ as *const c_char)
 			.to_str().unwrap().to_lowercase(); // TODO: handle error
 
