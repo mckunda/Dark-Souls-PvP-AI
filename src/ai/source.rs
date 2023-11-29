@@ -43,7 +43,8 @@ pub fn SetupandLoad() -> i32 {
     // memset(&Enemy, 0, sizeof(Character));
     // memset(&Player, 0, sizeof(Character));
     //TODO temp hardcoding
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut p = Player.lock().unwrap(); // TODO: error handling
     let mut ph = processHandle.lock().unwrap(); // TODO: error handling
     let mut mb = memorybase.lock().unwrap(); // TODO: error handling
@@ -133,7 +134,8 @@ pub fn MainLogicLoop() {
 		//TODO lock the camera
 		//lockCamera(&processHandle);
 
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut p = Player.lock().unwrap(); // TODO: error handling
     let ph = processHandle.lock().unwrap();
     let mut dmi = defense_mind_input.lock().unwrap(); // TODO: error handling

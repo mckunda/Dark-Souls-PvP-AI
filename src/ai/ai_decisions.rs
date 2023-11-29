@@ -35,7 +35,8 @@ pub struct InstinctDecision {
 //composes the INSTINCT of the AI mind. Basic interactions/actions/reactions that are high accuracy, very fast, but not very complex.
 pub fn InstinctDecisionMaking(instinct_decision: &mut InstinctDecision) {
 	let mut p = Player.lock().unwrap(); // TODO: error handling
-	let mut e = Enemy.lock().unwrap(); // TODO: error handling
+	let mut e = Enemy.lock();
+	let mut e = e.borrow_mut(); // TODO: error handling
 	instinct_decision.priority_decision = PriorityDecision::EnemyNeutral;
 	let distanceByLine: f32 = distance(&p, &e);
 	guiPrint!("{},1:Distance:{}", LocationJoystick, distanceByLine);

@@ -1,7 +1,9 @@
+use std::cell::RefCell;
 use crate::ai::gui::LocationDetection;
 use std::ffi::c_void;
 use std::sync::Mutex;
 use lazy_static::lazy_static;
+use parking_lot::ReentrantMutex;
 use windows::Win32::Foundation::HANDLE;
 use windows::Win32::System::Diagnostics::Debug::ReadProcessMemory;
 use crate::ai::animation_mappings::{AnimationCombineReturn, CombineLastAnimation, dodgeTimings, isAttackAnimation, isDodgeAnimation, isVulnerableAnimation};
@@ -78,7 +80,7 @@ pub struct Character {
 
 //initalize the phantom and player
 lazy_static!(
-    pub static ref Enemy: Mutex<Character> = Mutex::new(
+    pub static ref Enemy: ReentrantMutex<RefCell<Character>> = ReentrantMutex::new(RefCell::new(
         Character {
             location_x_address: 0,
             loc_x: 0f32,
@@ -119,7 +121,7 @@ lazy_static!(
             poise: 0f32,
             bleedStatus_address: 0,
             bleedStatus: 0, 
-        }
+        })
     );
 );
 lazy_static!(
@@ -316,7 +318,8 @@ pub unsafe fn ReadPlayer(c: &mut Character, processHandle: HANDLE, characterId: 
     guiPrint!("{},3:Animation Type:{}", characterId, c.animationType_id);
     //remember enemy animation types
     if characterId == EnemyId {
-        let id = Enemy.lock().unwrap().animationType_id; // TODO: error handling
+        let id = Enemy.lock();
+        let id = id.borrow().animationType_id;// TODO: error handling
         AppendAnimationTypeEnemy(id as u16);
     }
     //read hp
@@ -540,10 +543,10 @@ pub fn ReadPlayerDEBUGGING(c: &mut Character) {
 
 pub unsafe fn ReadPointerEndAddresses(processHandle: HANDLE) {
     //add the pointer offsets to the address. This can be slow because its startup only
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock(); // TODO: error handling
     let eba = Enemy_base_add.lock().unwrap(); // TODO: error handling
     let pba = player_base_add.lock().unwrap(); // TODO: error handling
-
+    let mut e = e.borrow_mut();
     e.location_x_address = FindPointerAddr(processHandle, *eba, Enemy_loc_x_offsets_length, Enemy_loc_x_offsets);
     e.location_y_address = FindPointerAddr(processHandle, *eba, Enemy_loc_y_offsets_length, Enemy_loc_y_offsets);
     e.rotation_address = FindPointerAddr(processHandle, *eba, Enemy_rotation_offsets_length, Enemy_rotation_offsets);

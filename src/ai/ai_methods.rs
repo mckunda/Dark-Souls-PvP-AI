@@ -26,7 +26,8 @@ pub const TotalTimeInSectoReverseRoll: f32 = (TimeForR3ToTrigger + TimeForCamera
 pub unsafe fn StandardRoll(iReport: &mut JOYSTICK_POSITION) {
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let stde = startTimeDefense.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling
     let lsss = last_subroutine_states_self.lock().unwrap(); // TODO: error handling
@@ -126,7 +127,8 @@ pub unsafe fn Omnistep_Backwards(iReport: &mut JOYSTICK_POSITION){
 	guiPrint!("{},0:Omnistep Backwards", LocationState);
     let curTime: i64 = clock();
     let p = Player.lock().unwrap(); // TODO: error handling
-    let e = Enemy.lock().unwrap(); // TODO: error handling
+    let e = Enemy.lock();
+    let e = e.borrow(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
     let stde = startTimeDefense.lock().unwrap(); // TODO: error handling;
 
@@ -158,7 +160,8 @@ pub const inputDelayForStopStrafe: i64 = 800;
 pub unsafe fn CounterStrafe(iReport: &mut JOYSTICK_POSITION, left_strafe: bool){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
     let stde = startTimeDefense.lock().unwrap(); // TODO: error handling;
 
@@ -221,7 +224,8 @@ pub unsafe fn L1Attack(iReport: &mut JOYSTICK_POSITION){
     guiPrint!("{},0:L1", LocationState);
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
     let stde = startTimeDefense.lock().unwrap(); // TODO: error handling;
 
@@ -401,7 +405,8 @@ pub const inputDelayForKick: i64 = 50;
 pub unsafe fn ghostHit(iReport: &mut JOYSTICK_POSITION){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let sta = startTimeAttack.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
 
@@ -458,7 +463,8 @@ pub unsafe fn ghostHit(iReport: &mut JOYSTICK_POSITION){
 pub unsafe fn deadAngle(iReport: &mut JOYSTICK_POSITION){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut sta = startTimeAttack.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
 
@@ -519,7 +525,8 @@ pub unsafe fn backStab(iReport: &mut JOYSTICK_POSITION){
     guiPrint!("{},0:backstab", LocationState);
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut notReset = startTimeHasntBeenReset.lock().unwrap(); // TODO: error handling
     let mut sta = startTimeAttack.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
@@ -561,7 +568,8 @@ pub unsafe fn MoveUp(iReport: &mut JOYSTICK_POSITION){
     //if we are not close enough, move towards 
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let sta = startTimeAttack.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
 
@@ -663,7 +671,8 @@ lazy_static!(
 pub unsafe fn PivotBS(iReport: &mut JOYSTICK_POSITION){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut spa = StartingPivotAngle.lock().unwrap(); // TODO: error handling
     let sta = startTimeAttack.lock().unwrap(); // TODO: error handling
 	guiPrint!("{},0:Pivot BS Time:{}", LocationState, (curTime - *sta));
@@ -734,7 +743,6 @@ pub unsafe fn PivotBS(iReport: &mut JOYSTICK_POSITION){
 pub unsafe fn attack(iReport: &mut JOYSTICK_POSITION, instinct_decision: &InstinctDecision, AttackNeuralNetChoice: u8){
     let curTime = clock();
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
     let mut ss = subroutine_states.lock().unwrap(); // TODO: error handling;
     let mut sta = startTimeAttack.lock().unwrap(); // TODO: error handling;
 	guiPrint!("{},0:Pivot BS Time:{}", LocationState, curTime - *sta);

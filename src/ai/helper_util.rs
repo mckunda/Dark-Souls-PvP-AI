@@ -147,7 +147,8 @@ pub fn StaminaEstimationEnemy() -> i32 {
             staminaEstimate -= 28;
         }
         else if isAttackAnimation(l[i] as u8) != 0 {
-            let e = Enemy.lock().unwrap(); // TODO: handle error
+            let e = Enemy.lock(); // TODO: handle error
+            let e = e.borrow();
             //assuming they haven't switched weapons during this time, use their right weapon and the attack type to get the stamina drain
             staminaEstimate -= StaminaDrainForAttack(e.r_weapon_id, e.animationType_id as u16);
         }
@@ -155,7 +156,8 @@ pub fn StaminaEstimationEnemy() -> i32 {
         else if  l[i] == AnimationTypes::Nothing as u16
             || l[i] == AnimationTypes::Shield_Held_Up as u16
             || l[i] == AnimationTypes::Shield_Held_Up_walking as u16 {
-            let e = Enemy.lock().unwrap(); // TODO: handle error
+            let e = Enemy.lock();
+            let e = e.borrow(); // TODO: handle error
             staminaEstimate += e.staminaRecoveryRate / 10;
         }
 

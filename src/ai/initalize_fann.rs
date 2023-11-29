@@ -61,7 +61,8 @@ static fpdef: &'static str = concatcp!(NeuralNetFolderLocation, "/backstab_train
 static fpdef_test: &'static str = concatcp!(NeuralNetFolderLocation, "/backstab_training_data.test");
 
 pub unsafe fn GetTrainingData() {
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
     let mut p = Player.lock().unwrap(); // TODO: error handling
     let ai3a = AnimationId3_Addr.lock().unwrap(); // TODO: error handling
     let mut ai3 = AnimationId3.lock().unwrap(); // TODO: error handling

@@ -51,7 +51,8 @@ fn main() -> Result<ExitCode, ()> {
             guiPrint!("{},0:RereadPointerEndAddress {}", LocationHandler, rpea);
 
             let mut vs = visualStatus.lock().unwrap(); // TODO: error handling
-            let mut e = Enemy.lock().unwrap(); // TODO: error handling
+            let mut e = Enemy.lock();
+            let mut e = e.borrow_mut(); // TODO: error handling
             guiPrint!("{},1:Enemy.loc_x {}\nvisualStatus {}", LocationHandler, e.loc_x, vs);
             guiPrint!("{},2:", LocationHandler);
 

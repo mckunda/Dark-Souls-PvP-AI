@@ -61,7 +61,8 @@ unsafe fn DefenseMindProcess() {
     let mut ac = AttackChoice.lock().unwrap(); // TODO: error handling
     let mut dc = DefenseChoice.lock().unwrap(); // TODO: error handling
     let mut p = Player.lock().unwrap(); // TODO: error handling
-    let mut e = Enemy.lock().unwrap(); // TODO: error handling
+    let mut e = Enemy.lock();
+    let mut e = e.borrow_mut(); // TODO: error handling
 
     while !dmi.exit {
         //lock control of this resource
@@ -131,7 +132,8 @@ unsafe fn DefenseMindProcess() {
 
 unsafe fn AttackMindProcess() {
     let p = Player.lock().unwrap(); // TODO: error handling
-    let e = Enemy.lock().unwrap(); // TODO: error handling
+    let e = Enemy.lock();
+    let e = e.borrow_mut(); // TODO: error handling
 
     let mut ami = attack_mind_input.lock().unwrap(); // TODO: error handling
     let mut ac = AttackChoice.lock().unwrap(); // TODO: error handling
