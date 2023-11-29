@@ -13,7 +13,6 @@ use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
 use crate::constants::EnemyId;
 
-pub const PI: f64 = 3.14159265;
 pub const XRIGHT: LONG = 32768;
 pub const XLEFT: LONG = 1;
 pub const YTOP: LONG = 1;
@@ -354,7 +353,7 @@ pub fn angleFromCoordinates(player_x: f32, phantom_x: f32, player_y: f32, phanto
     }
 
 	//convert this to 360 degrees
-	let mut angle: f64 = (f64::atan2(delta_x, delta_y) + PI) * (180.0 / PI);
+	let mut angle: f64 = (f64::atan2(delta_x, delta_y) + std::f64::consts::PI) * (180.0 / std::f64::consts::PI);
 
     if OolicelMap == 0 {
         angle -= 90.0;
@@ -364,13 +363,13 @@ pub fn angleFromCoordinates(player_x: f32, phantom_x: f32, player_y: f32, phanto
 }
 
 pub fn angleToJoystick_Clockwise(angle: f64, tuple: &mut longTuple) {
-	tuple.x_axis = ((XRIGHT as f64 * ((angle * (PI / 180.0)).cos() + 1.)) / 2.0) as i64;
-	tuple.y_axis = ((YBOTTOM as f64 * ((angle * (PI / 180.0)).sin() + 1.)) / 2.0) as i64;
+	tuple.x_axis = ((XRIGHT as f64 * ((angle * (std::f64::consts::PI / 180.0)).cos() + 1.)) / 2.0) as i64;
+	tuple.y_axis = ((YBOTTOM as f64 * ((angle * (std::f64::consts::PI / 180.0)).sin() + 1.)) / 2.0) as i64;
 }
 
 pub fn angleToJoystick_CounterClockwise(angle: f64, tuple: &mut longTuple) {
-	tuple.x_axis = ((XRIGHT as f64 * ((angle * (PI / 180.0) + (PI / 2.0)).cos() + 1.)) / 2.0) as i64;
-	tuple.y_axis = ((YBOTTOM as f64 * ((angle * (PI / 180.0) - (PI / 2.0)).sin() + 1.)) / 2.0) as i64;
+	tuple.x_axis = ((XRIGHT as f64 * ((angle * (std::f64::consts::PI / 180.0) + (std::f64::consts::PI / 2.0)).cos() + 1.)) / 2.0) as i64;
+	tuple.y_axis = ((YBOTTOM as f64 * ((angle * (std::f64::consts::PI / 180.0) - (std::f64::consts::PI / 2.0)).sin() + 1.)) / 2.0) as i64;
 }
 
 /*
@@ -422,7 +421,7 @@ pub fn lockCamera(processHandle: HANDLE){
 	//set y location
 	WriteProcessMemory(processHandle_nonPoint, (LPCVOID)(camera->cam_y_addr), (LPCVOID)(camera->cam_y), 4, NULL);
 	//set x rotation to ???
-	float pi = PI;
+	float pi = std::f64::consts::PI;
 	WriteProcessMemory(processHandle_nonPoint, (LPCVOID)(camera->rot_x_addr), &pi, 4, NULL);
 	//set y rotation to anything, this doesnt matter*/
 
