@@ -24,3 +24,4 @@ pub const LockInSubanimation : u32 = 12;
 pub const AttackSubanimationActiveHurtboxOver : u32 = 13;
 pub const PoiseBrokenSubanimation : u32 = 14;
 pub const SubanimationRecover : u32 = 20;
+pub const SubanimationNeutral : u32 = 30;

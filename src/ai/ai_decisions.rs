@@ -1,13 +1,13 @@
 use crate::ai::{back_to_enum, guiPrint};
 use crate::ai::ai_methods::TotalTimeInSectoReverseRoll;
 use crate::ai::animation_mappings::{AnimationTypes, isAttackAnimation};
-use crate::ai::character::{Enemy, Player, SubanimationNeutral};
+use crate::ai::character::{Enemy, Player};
 use crate::ai::gui::{LocationDetection, LocationJoystick};
 use crate::ai::helper_util::{BackstabDetection, distance};
 use crate::ai::memory::last_subroutine_states_self;
 use crate::ai::sub_routines::{AttackId, DefenseId, OverrideLowPrioritySubroutines};
 use crate::ai::weapon_data::IsWeaponShield;
-use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationWindup, AttackSubanimationWindupClosing, PoiseBrokenSubanimation};
+use crate::constants::{AttackSubanimationActiveDuringHurtbox, AttackSubanimationWindup, AttackSubanimationWindupClosing, PoiseBrokenSubanimation, SubanimationNeutral};
 
 back_to_enum!(
 	#[derive(PartialEq, Clone)]

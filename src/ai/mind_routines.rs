@@ -10,14 +10,14 @@ use const_format::concatcp;
 use crate::fann::{Fann, FannType};
 use lazy_static::lazy_static;
 use libc::{rand, RAND_MAX};
-use crate::ai::character::{Enemy, Player, SubanimationNeutral};
+use crate::ai::character::{Enemy, Player};
 use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleDeltaFromFront, BackstabDetection, distance, rotationDifferenceFromSelf, StaminaEstimationEnemy};
 use crate::ai::memory::{AIHPMemory, AIHPMemoryLENGTH, DistanceMemory, DistanceMemoryLENGTH, last_animation_types_enemy, last_animation_types_enemy_LENGTH};
 use crate::ai::settings::{BackstabMetaOnly, NeuralNetFolderLocation};
 use crate::ai::sub_routines::{AttackId, DefenseId};
 use crate::ai::weapon_data::PoiseDamageForAttack;
-use crate::constants::LockInSubanimation;
+use crate::constants::{LockInSubanimation, SubanimationNeutral};
 
 pub struct MindInput {
     pub mind: Option<Fann>,

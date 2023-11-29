@@ -4,14 +4,14 @@ use vjoy_sys::{JOYSTICK_POSITION, LONG};
 use crate::ai::ai_decisions::{InstinctDecision, PriorityDecision};
 use crate::ai::ai_decisions::SubroutineId::{attackid, defenseid};
 use crate::ai::animation_mappings::isDodgeAnimation;
-use crate::ai::character::{Enemy, Player, SubanimationNeutral};
+use crate::ai::character::{Enemy, Player};
 use crate::ai::ffi::clock;
 use crate::ai::gui::LocationState;
 use crate::ai::guiPrint;
 use crate::ai::helper_util::{angleFromCoordinates, angleToJoystick, BackstabDetection, circle, distance, dleft, l1, l2, longTuple, MIDDLE, r1, r3, square, triangle, XLEFT, XRIGHT, YBOTTOM};
 use crate::ai::memory::{AppendLastSubroutineSelf, last_subroutine_states_self};
 use crate::ai::sub_routines::{AttackId, AttackStateIndex, AttackTypeIndex, DefenseId, DodgeStateIndex, DodgeTypeIndex, inActiveAttackSubroutine, inActiveDodgeSubroutine, inActiveSubroutine, NoSubroutineActive, startTimeAttack, startTimeDefense, subroutine_states, SubroutineActive, SubroutineExiting};
-use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation};
+use crate::constants::{AttackSubanimationWindupGhostHit, LockInSubanimation, PoiseBrokenSubanimation, SubanimationNeutral};
 
 use crate::constants::SubanimationRecover;
 
