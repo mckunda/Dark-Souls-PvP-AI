@@ -62,3 +62,5 @@ pub const TimeDeltaForGameRegisterAction: i64 = 170;
 pub const TotalTimeInSectoReverseRoll: f32 = (TimeForR3ToTrigger + TimeForCameraToRotateAfterLockon + TimeDeltaForGameRegisterAction + 50) as f32 / (CLOCKS_PER_SEC as f32);
 
 pub const inputDelayForStopCircle: i64 = 40;
+
+pub const inputDelayForOmnistepWait: i64 = 40;
