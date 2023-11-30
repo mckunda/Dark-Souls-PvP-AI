@@ -1,3 +1,5 @@
+use vjoy_sys::LONG;
+
 pub const EnemyId: i32 = 0;
 pub const PlayerId: i32 = 1;
 pub const Enemy_loc_x_offsets_length: usize = 4;
@@ -78,3 +80,5 @@ pub const inputDelayForStopMove: i64 = 90;
 pub const TwoSecStoreLength: usize = 40;
 pub const Player_AnimationId3_offsets_length: usize = 2;
 pub const Player_Timer3_offsets_length: usize = 5;
+
+pub const XRIGHT: LONG = 32768;
