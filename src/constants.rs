@@ -82,3 +82,5 @@ pub const Player_AnimationId3_offsets_length: usize = 2;
 pub const Player_Timer3_offsets_length: usize = 5;
 
 pub const XRIGHT: LONG = 32768;
+
+pub const XLEFT: LONG = 1;
