@@ -86,3 +86,5 @@ pub const XRIGHT: LONG = 32768;
 pub const XLEFT: LONG = 1;
 
 pub const YTOP: LONG = 1;
+
+pub const YBOTTOM: LONG = 32768;

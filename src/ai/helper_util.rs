@@ -11,9 +11,8 @@ use crate::ai::memory::{last_animation_types_enemy, last_animation_types_enemy_L
 use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
-use crate::constants::{EnemyId, XRIGHT};
+use crate::constants::{EnemyId, XRIGHT, YBOTTOM};
 
-pub const YBOTTOM: LONG = 32768;
 pub const MIDDLE: LONG = 16384;
 
 // int loadvJoy(UINT iInterface);
