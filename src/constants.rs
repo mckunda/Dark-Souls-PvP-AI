@@ -111,3 +111,14 @@ pub const dright: LONG = 0x1;
 pub const ddown: LONG = 0x2;
 pub const dleft: DWORD = 0x3;
 pub const dcenter: LONG = 0x4;
+
+pub const HID_USAGE_X: u32 = 0x30;
+pub const HID_USAGE_Y: u32 = 0x31;
+pub const HID_USAGE_Z: u32 = 0x32;
+pub const HID_USAGE_RX: u32 = 0x33;
+pub const HID_USAGE_RY: u32 = 0x34;
+pub const HID_USAGE_RZ: u32 = 0x35;
+pub const HID_USAGE_SL0: u32 = 0x36;
+pub const HID_USAGE_SL1: u32 = 0x37;
+pub const HID_USAGE_WHL: u32 = 0x38;
+pub const HID_USAGE_POV: u32 = 0x39;

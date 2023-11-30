@@ -11,20 +11,7 @@ use crate::ai::memory::{last_animation_types_enemy, last_animation_types_enemy_L
 use crate::ai::memory_edits::FindPointerAddr;
 use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
-use crate::constants::{EnemyId, XRIGHT, YBOTTOM};
-
-// int loadvJoy(UINT iInterface);
-
-pub const HID_USAGE_X: u32 = 0x30;
-pub const HID_USAGE_Y: u32 = 0x31;
-pub const HID_USAGE_Z: u32 = 0x32;
-pub const HID_USAGE_RX: u32 = 0x33;
-pub const HID_USAGE_RY: u32 = 0x34;
-pub const HID_USAGE_RZ: u32 = 0x35;
-pub const HID_USAGE_SL0: u32 = 0x36;
-pub const HID_USAGE_SL1: u32 = 0x37;
-pub const HID_USAGE_WHL: u32 = 0x38;
-pub const HID_USAGE_POV: u32 = 0x39;
+use crate::constants::{EnemyId, HID_USAGE_RX, HID_USAGE_RY, HID_USAGE_X, HID_USAGE_Y, HID_USAGE_Z, XRIGHT, YBOTTOM};
 
 pub struct longTuple {
 	pub x_axis: i64,
