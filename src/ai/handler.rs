@@ -74,7 +74,7 @@ pub unsafe fn PutDownRedSign() {
     let vj = vJoyInterface::new("").unwrap(); // TODO: error handling
     let mut rsd = RedSignDown.lock().unwrap(); // TODO: error handling
 	//press x (in case we have a message appearing), down to goto next item, and check if we selected RSS
-	for _ in [0..5] {
+	for _ in 0..5 {
 		ir.bHats = cross as DWORD;
 		vj.UpdateVJD(iInterface, &mut ir as *mut _ as *mut JOYSTICK_POSITION_V2);
 		sleep(time::Duration::from_millis(100));
