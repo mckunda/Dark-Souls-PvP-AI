@@ -7,9 +7,8 @@ lazy_static!(
 );
 
 
-pub const last_animation_ids_enemy_LENGTH: usize = 20;
 lazy_static!(
-    pub static ref last_animation_ids_enemy: Mutex<[i32;last_animation_ids_enemy_LENGTH]> = Mutex::new([0;last_animation_ids_enemy_LENGTH]);
+    pub static ref last_animation_ids_enemy: Mutex<[i32;20]> = Mutex::new([0;20]);
 );
 
 //update every 100 ms. LENGTH*100 = time of memory
@@ -44,7 +43,7 @@ pub fn AppendLastAnimationIdEnemy(aid: i32) -> bool {
     let mut l = last_animation_ids_enemy.lock().unwrap(); // TODO: handle error
 
     if aid != l[0] {
-        for i in (0..last_animation_ids_enemy_LENGTH).rev() {
+        for i in (0..l.len()).rev() {
             l[i] = l[i - 1];
         }
         l[0] = aid;
