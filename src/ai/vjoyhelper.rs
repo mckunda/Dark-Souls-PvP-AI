@@ -1,7 +1,8 @@
 use std::sync::Mutex;
 use lazy_static::lazy_static;
 use vjoy_sys::{DWORD, JOYSTICK_POSITION};
-use crate::ai::helper_util::{dcenter, MIDDLE};
+use crate::ai::helper_util::dcenter;
+use crate::constants::MIDDLE;
 lazy_static!(
     pub static ref iReport: Mutex<JOYSTICK_POSITION> = Mutex::new(JOYSTICK_POSITION{
         bDevice: 0,

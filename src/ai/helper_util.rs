@@ -13,8 +13,6 @@ use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
 use crate::constants::{EnemyId, XRIGHT, YBOTTOM};
 
-pub const MIDDLE: LONG = 16384;
-
 // int loadvJoy(UINT iInterface);
 
 //ps3 controller mapping
