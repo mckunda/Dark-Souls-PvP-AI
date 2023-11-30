@@ -2,10 +2,8 @@ use std::sync::Mutex;
 use lazy_static::lazy_static;
 use crate::ai::ffi::clock;
 
-pub const last_subroutine_states_self_LENGTH: usize = 20;
-
 lazy_static!(
-    pub static ref last_subroutine_states_self: Mutex<[u8;last_subroutine_states_self_LENGTH]> = Mutex::new([0;last_subroutine_states_self_LENGTH]);
+    pub static ref last_subroutine_states_self: Mutex<[u8;20]> = Mutex::new([0;20]);
 );
 
 
@@ -35,7 +33,7 @@ lazy_static!(
 
 pub fn AppendLastSubroutineSelf(subroutineId: u8) {
     let mut s = last_subroutine_states_self.lock().unwrap(); // TODO: handle error
-    for i in (0..last_subroutine_states_self_LENGTH).rev() {
+    for i in (0..s.len()).rev() {
         s[i] = s[i - 1];
     }
     s[0] = subroutineId;
