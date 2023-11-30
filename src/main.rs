@@ -24,7 +24,7 @@ use crate::ai::handler::{LastRedSignTime, Player_selectedItem_offsets, Player_se
 use crate::ai::helper_util::distance;
 use crate::ai::vjoyhelper::{iReport, ResetVJoyController};
 
-fn main() -> Result<ExitCode, ()> {
+fn old_main() -> Result<ExitCode, ()> {
     if FeedNeuralNet {
         trainFromFile(70,
                       concatcp!(NeuralNetFolderLocation, "/attack_training_data.train"),
@@ -140,4 +140,7 @@ fn main() -> Result<ExitCode, ()> {
 
     Exit();
     Ok(ExitCode::SUCCESS)
+}
+
+fn main() {
 }
