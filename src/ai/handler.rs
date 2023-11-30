@@ -3,9 +3,9 @@ use std::thread::sleep;
 use std::time;
 use lazy_static::lazy_static;
 use vjoy_sys::{DWORD, JOYSTICK_POSITION_V2, vJoyInterface};
-use crate::ai::helper_util::{cross, dcenter, ddown, square};
 use crate::ai::source::iInterface;
 use crate::ai::vjoyhelper::{iReport, ResetVJoyController};
+use crate::constants::{cross, dcenter, ddown, square};
 
 //visual state. used for auto red signing
 pub static Player_visual_offsets: &'static [u64;Player_visual_offsets_length] = &[ 0x28, 0x0, 0x30, 0xC, 0x70 ];

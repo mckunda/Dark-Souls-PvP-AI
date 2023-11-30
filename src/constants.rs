@@ -1,4 +1,4 @@
-use vjoy_sys::LONG;
+use vjoy_sys::{DWORD, LONG};
 
 pub const EnemyId: i32 = 0;
 pub const PlayerId: i32 = 1;
@@ -90,3 +90,24 @@ pub const YTOP: LONG = 1;
 pub const YBOTTOM: LONG = 32768;
 
 pub const MIDDLE: LONG = 16384;
+
+//ps3 controller mapping
+pub const circle: LONG = 0x8;
+pub const cross: LONG = 0x4;
+pub const square: LONG = 0x1;
+pub const triangle: LONG = 0x2;
+pub const r1: LONG = 0x20;
+pub const l1: LONG = 0x10;
+//untested
+pub const l2: LONG = 0x40;
+pub const r2: LONG = 0x80;
+//untested
+pub const l3: LONG = 0x100;
+pub const r3: LONG = 0x200;
+pub const select: LONG = 0x400;
+pub const start: LONG = 0x800;
+pub const dup: LONG = 0x0;
+pub const dright: LONG = 0x1;
+pub const ddown: LONG = 0x2;
+pub const dleft: DWORD = 0x3;
+pub const dcenter: LONG = 0x4;

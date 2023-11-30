@@ -1,7 +1,7 @@
 use std::ffi::{c_char, c_void, CStr, CString};
 use std::sync::Mutex;
 use lazy_static::lazy_static;
-use vjoy_sys::{BOOL, DWORD, LONG, VjdStat, VjdStat_VJD_STAT_FREE, VjdStat_VJD_STAT_OWN, vJoyInterface, WORD};
+use vjoy_sys::{BOOL, VjdStat, VjdStat_VJD_STAT_FREE, VjdStat_VJD_STAT_OWN, vJoyInterface, WORD};
 use windows::Win32::Foundation::HANDLE;
 use windows::Win32::System::Diagnostics::Debug::ReadProcessMemory;
 use crate::ai::animation_mappings::{AnimationTypes, isAttackAnimation, isDodgeAnimation};
@@ -14,25 +14,6 @@ use crate::ai::weapon_data::StaminaDrainForAttack;
 use crate::constants::{EnemyId, XRIGHT, YBOTTOM};
 
 // int loadvJoy(UINT iInterface);
-
-//ps3 controller mapping
-pub const circle: LONG = 0x8;
-pub const cross: LONG = 0x4;
-pub const square: LONG = 0x1;
-pub const triangle: LONG = 0x2;
-pub const r1: LONG = 0x20;
-pub const l1: LONG = 0x10;
-pub const l2: LONG = 0x40; //untested
-pub const r2: LONG = 0x80;
-pub const l3: LONG = 0x100; //untested
-pub const r3: LONG = 0x200;
-pub const select: LONG = 0x400;
-pub const start: LONG = 0x800;
-pub const dup: LONG = 0x0;
-pub const dright: LONG = 0x1;
-pub const ddown: LONG = 0x2;
-pub const dleft: DWORD = 0x3;
-pub const dcenter: LONG = 0x4;
 
 pub const HID_USAGE_X: u32 = 0x30;
 pub const HID_USAGE_Y: u32 = 0x31;
