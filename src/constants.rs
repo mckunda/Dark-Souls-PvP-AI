@@ -84,3 +84,5 @@ pub const Player_Timer3_offsets_length: usize = 5;
 pub const XRIGHT: LONG = 32768;
 
 pub const XLEFT: LONG = 1;
+
+pub const YTOP: LONG = 1;

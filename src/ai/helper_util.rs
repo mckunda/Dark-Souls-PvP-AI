@@ -13,7 +13,6 @@ use crate::ai::settings::OolicelMap;
 use crate::ai::weapon_data::StaminaDrainForAttack;
 use crate::constants::{EnemyId, XRIGHT};
 
-pub const YTOP: LONG = 1;
 pub const YBOTTOM: LONG = 32768;
 pub const MIDDLE: LONG = 16384;
 
